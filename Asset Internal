@@ -1,0 +1,37 @@
+function SimpanWH() {
+  var Sheet = SpreadsheetApp.getActiveSpreadsheet();
+  var shtinput = Sheet.getSheetByName('Main');
+  var shtdb = Sheet.getSheetByName('WH Asset');
+  
+  var serial = shtinput.getRange('D4').getValue();
+  var categ = shtinput.getRange('D5').getValue();
+  var model = shtinput.getRange('D6').getValue();
+  var user = shtinput.getRange('D7').getValue();
+  var status = shtinput.getRange('D8').getValue();
+  var remark = shtinput.getRange('D9').getValue();
+  var checked = shtinput.getRange('D10').getValue();
+  
+  var baris = shtdb.getRange('I1').getValue();
+  baris += 1;
+  var rangeisi = shtdb.getRange('A' + baris + ':G'+ baris);
+  rangeisi.setValues([[serial,categ,model,user,status,remark,checked]]);
+  bersihWH();
+}
+
+function BersihWH() {
+  var Sheet = SpreadsheetApp.getActiveSpreadsheet();
+  var shtinput = Sheet.getSheetByName('Main');
+  
+  shtinput.getRange('D8').clearContent();
+  shtinput.getRange('D9').clearContent();
+  shtinput.getRange('D10').clearContent();
+}
+
+function CleanWH() {
+  var Sheet = SpreadsheetApp.getActiveSpreadsheet();
+  var shtinput = Sheet.getSheetByName('Main');
+  
+  shtinput.getRange('D8').clearContent();
+  shtinput.getRange('D9').clearContent();
+  shtinput.getRange('D10').clearContent();
+}
