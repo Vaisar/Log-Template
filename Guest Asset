@@ -1,4 +1,4 @@
-function SimpanWH1() {
+function SubmitWH1() {
   var Sheet = SpreadsheetApp.getActiveSpreadsheet();
   var shtinput = Sheet.getSheetByName('Main');
   var shtdb = Sheet.getSheetByName('Guest Asset');
